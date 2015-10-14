@@ -5,19 +5,18 @@
 </head>
 <body>
 
-<p> {{first}} {{last}} {{github}} {{project_title}} {{grade}} {{p_and_g}}</p>
-
-<!-- <h1>{{ first }} {{ last }}</h1>
+<h1>{{ first }} {{ last }}</h1>
 
 <p>GitHub Account: {{ github }}</p>
 
-
-    <ul> Project title:
-        {% for i in_____%}
-        <li>{{ project_title }}</li>
-        {% endfor %}
+{% if student_info[0][3] %}
+    {% for item in student_info %}
+    <ul>
+        <li>Project: {{ item[3] }}</li>
+        <li> Grade: {{ item[4] }}</li>
     </ul>
-
-     -->
+    {% endfor %}
+{% endif %}
+    
 </body>
 </html>

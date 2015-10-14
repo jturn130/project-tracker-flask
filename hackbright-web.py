@@ -17,19 +17,22 @@ def get_student():
     """Show information about a student."""
 
     github = request.args.get('github', 'jhacks')
-    results = hackbright.get_student_by_github(github)
+    student_info = hackbright.get_student_by_github(github)
+    # project_and_grade = []
 
-    print results
-    ####TODO iterate over results, and get tuples and the other stuff
+    # for i in student_info:
+    #     first = i[0] 
+    #     last = i[1]
+    #     project_and_grade.append((i[3], i[4]))
 
-    
+    first = student_info[0][0]
+    last = student_info[0][1]
+
     html = render_template("student_info.html",
                                first=first,
                                last=last,
                                github=github,
-                               project_title=project_title,
-                               grade=grade)
-
+                               student_info=student_info)
 
     return html
 
